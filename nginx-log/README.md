@@ -60,9 +60,11 @@ Open [localhost:9200](localhost:9200):
 
 ## View Nginx Static HTML
 
-Open [localhost:4000](localhost:4000):
+Open [localhost:4000](localhost:4000) and [localhost:5000](localhost:5000):
 
 ![nginx-static-html](assets/nginx-static-html.png)
+
+We have two different sample applications, one is just a basic plain HTML, another is a full webapp Single Page Application - both served using Nginx.
 
 ## View Kibana Logs
 

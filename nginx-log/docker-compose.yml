@@ -39,6 +39,7 @@ services:
     ports:
       - 127.0.0.1:5601:5601
 
+  # Plain static HTML
   nginx:
     image: nginx:1.13.12
     volumes:
@@ -51,3 +52,18 @@ services:
         tag: docker.nginx
     depends_on:
       - fluentd
+
+  # Plain nginx SPA (Single Page App)
+  # The docker image is build with the static files embedded
+  # https://github.com/alextanhongpin/reason-github-leaderboard 
+  webapp:
+    image: alextanhongpin/nginx-reason:1.0.2
+    ports:
+      - 127.0.0.1:5000:80
+    logging:
+      driver: fluentd
+      options:
+        tag: docker.webapp
+    depends_on:
+      - fluentd
+    
